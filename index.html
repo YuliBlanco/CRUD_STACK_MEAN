@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TVify</title>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="estilosweb.css">
+   <script
+  src="http://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+    
+</head>
+<body>
+
+	<div id="app-container">
+	<header id="app-header">
+		
+		<h1>TVify</h1>
+		<h2>Todos los Shows de Tv</h2>
+	</header>
+<section id="app-body">
+	
+</section>
+	<footer id="app-footer">
+		<p>Hecho con &lt;3 por Yuli</p>
+
+	</footer>
+	</div>
+
+<script> 
+
+//window.onload=function(){alert("loaded")}
+//$(function(){alert("ready")})
+ //para encontra un elemento en este caso el header y le debemos colocar el id correspondiente
+ $(function(){
+
+ 	var header=document.getElementById("app-header");
+ console.log(header);
+ })
+
+ //ahora si queremos un elemento que no tiene ID es un poco más dificil pero entonces jquery nos ayuda de la siguiente manera pero muestra algo bien diferente.
+
+$(function(){
+
+ 	var header = $("#app-header h1"); //este string es un selector el mismo de css podemos copiar el selector de css y buscarlo
+ 	console.log(header);
+ })
+
+$(function(){
+
+ 	var subHeader = $("h1 + h2"); // tododos los h2 que sean hermanos de h1, que esten precedidos por un h1, dentro del mismo contenedor
+ 	console.log(subHeader);
+ })
+ 
+ $(function(){
+ 	//var header=$("header");
+ 	var header1 = $("h1 ,header1[0]"); // buscar todos los h1 dentro del header
+ 	console.log(header1);
+ })
+
+ $(function(){
+ 	//obtener todos los headings
+ 	var headings = $("h1 ,h2"); //busca todos los h1yh2 de la aplicacion
+ 	console.log(headings);
+ })
+
+ // esto es para obtener datos de un form 
+
+ $(":input") // va a devolver <input>, <textarea>
+$(":selected") //todos los elementos que hayan sido seleccionados 
+$(":enabled") // todos los elementos que estan habilitados por ejemplo un radio buttom
+$(":disabled") // todos los elementos que estan desabilitados 
+$(":text") //input type text 
+$(":checkbox") 
+
+//hay muchos selectores que se pueden utilizar Jquery nos permite abarcar un poco más de selectores
+
+//agregar un parrafo con javascript
+
+$(function(){
+
+	 var p=document.createElement("p");
+	 p.innerHTML="Hola a todos";
+	 document.body.appendChild(p);
+})
+
+//agregando ahora pero con jquery
+
+$(function(){
+
+	var a = $("<a>",{
+
+		href: "https://twitter.com/yulejblanco",
+		target: "_blank",
+		html: "Ir a mi Twitter"
+})
+$("#app-body").append(a);
+})
+
+//mostrar por consola el atributo de un elemento html
+//a.attr("href", "http://google.com");
+//console.log $(a.attr('href'));
+  </script>
+
+
+
+
+ 
+
+
+
+</body>
+</html>
