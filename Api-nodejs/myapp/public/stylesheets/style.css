@@ -1,0 +1,78 @@
+/*body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #11cbd7;
+  background-color: #393e46;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#pie{
+	background-color: #0c4762;
+	color: #f4eeee;
+
+}
+
+.jumbotron {
+    padding: 30px;
+    margin-bottom: 30px;
+    color: inherit;
+    background-color: #cbf1f5;
+    }
+*/
+
+body{
+  padding: 50px;
+}
+
+.info{
+
+  width: 300px;
+  margin-left: 30px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.client{
+  margin-left: 30px;
+  margin-top: 5px;
+}
+
+.btn-default {
+  color: white;
+  background-color: #643579;
+  border-color: #f5EDF7;
+  margin-left: 15px;
+  height: 40px;
+  width:130px;
+  margin-left: 30px;
+  border-radius:15px;
+  margin-bottom: 20px;
+}
+.btn-default:focus,
+.btn-default.focus {
+  color: white;
+  background-color: #e6e6e6; /*#e6e6e6*/
+  border-color: #8c8c8c;
+}
+.btn-default:hover {
+  color: white; /*#333*/
+  background-color: #3D1860;
+  border-color: #adadad;
+}
+nav{
+  text-align: right;
+
+}
+ul{
+  list-style:none;
+}
+li{
+  display: inline-block;
+
+}
+li a{
+text-decoration:none;   
+}
+    

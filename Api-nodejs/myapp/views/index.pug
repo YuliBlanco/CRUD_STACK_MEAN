@@ -1,0 +1,119 @@
+extends layout
+
+
+block content
+  
+  h3(href='#', data-toggle='popover', title='App para tener todos tus contactos en un solo lugar', data-content='Some content inside the popover') 
+    nav
+      ul
+        li
+          a(href='index.pug', style='text-decoration:none')
+            i.fa.fa-home(aria-hidden='true')
+            | Inicio
+        li
+          a(href='index.pug', style='text-decoration:none')
+            i.fa.fa-plus-circle(aria-hidden='true')
+            | Agregar
+        li
+          a(href='index.pug', style='text-decoration:none')
+            i.fa.fa-search(aria-hidden='true')
+            | Buscar
+        li
+          a(href='index.pug', style='text-decoration:none')
+            i.fa.fa-trash(aria-hidden='true')
+            | Eliminar
+  
+  
+                            
+
+  section
+  #background_form
+        form(action='/nueva', method='post')
+            label.client Nombre:
+            br
+            input.info(name='nombre')
+            br
+            label.client Apellido:
+            br
+            input.info(name='lastname')
+            br
+            label.client Email:
+            br
+            input.info(name='email')
+            br
+            label.client Teléfono Celular:
+            br
+            input.info(name='phone')
+            br
+            label.client Teléfono Hogar:
+            br
+            input.info(name='phonee')
+            br
+            label.client Interéses:
+            br
+            input.info(name='interes')
+            br
+            input.btn-default(type='submit', value='Guardar')
+  section#tabla
+
+     
+
+     if agendapop.length == 0
+
+           p No existe
+
+     else        
+
+       table#example.display(width='100%', cellspacing='0')
+         thead
+           tr
+
+             th Nombre
+
+             th Apellido
+
+             th Email
+
+             th N° Teléfono Celular
+
+             th N° Teléfono Hogar
+
+             th Intereses
+
+         
+      
+               for crud in agendapop
+
+                   tr
+                       td=crud.nombre
+
+                       td=crud.lastname
+
+                       td=crud.email
+
+                       td=crud.phone
+
+                       td=crud.phonee
+
+                       td=crud.interes
+                            
+                            a(href='/borrar/#{crud.id}', type='submit', style='text-decoration:none')
+                              i.fa.fa-trash(aria-hidden='true')
+                              | Eliminar
+
+                            a(href='/editar/#{crud.id}', type='submit', style='text-decoration:none')
+                              i.fa.fa-trash(aria-hidden='true')
+                              | Editar
+
+                                                   
+  
+                            
+  
+  footer
+      p(style='text-align: center;')
+        i.fa.fa-copyright(aria-hidden='true')
+        | 2017 design with Javascript and 
+        i.fa.fa-heart(aria-hidden='true')
+        strong#author_yb  Yuli Blanco
+
+

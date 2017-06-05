@@ -1,0 +1,37 @@
+extends layout
+
+   
+
+block content
+
+   section
+
+       form(id='q' action='/actualizar', method='post')
+
+           input(type='hidden', name='id', value=agendapop.id)
+
+           label Nombre:
+
+           input(name='nombre', value=agendapop.nombre)
+
+           label Apellido:
+
+           input(name='apellido', value=agendapop.lastname)
+
+           label Apellido:
+
+           input(name='apellido', value=agendapop.email)
+
+           label Cedula:
+
+           input(name='cedula', value=agendapop.phone)
+
+           label Carrera:
+
+           input(name='carrera', value=agendapop.phonee)
+
+           label Fecha:
+
+           input(name='fecha', value=agendapop.interes)
+
+           input(type='submit', value='Actualizar')
