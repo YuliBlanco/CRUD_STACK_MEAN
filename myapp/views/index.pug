@@ -1,0 +1,39 @@
+extends layout
+
+block content
+  form#frmContacto.contact_form(action='', name='frmContacto', method='post')
+        ul
+          li
+            h2 Contáctanos
+          li
+            label(for='nombre') Nombre:
+            input#nombre(type='text', name='nombre', placeholder='Hector Varas', required='')
+          li
+            label(for='email') Email:
+            input#email(type='email', name='email', placeholder='king.cold@gmail.com', required='')
+          li
+            label(for='website') Sitio Web:
+            input#web(type='url', name='web', placeholder='http://www.hectorvaras.net', required='')
+          li
+            label(for='Comentario') Comentario:
+            textarea#comentario(name='comentario', cols='40', rows='6', required='')
+          li
+            button#submit.submit(name='submit', type='submit') Enviar
+          li
+            #resultado
+            .ajaxgif(style='display: none; ')
+              img(src='images/loading2.gif', width='50px')
+
+  #registros
+    h2 Registros
+     table#contactos_reg
+        thead
+          tr
+            th id
+            th Nombre
+            th Email
+          tbody
+  
+  
+  
+  
