@@ -1,0 +1,30 @@
+<div class="panel panel-default" ng-init="getEmployees()">
+	<div class="panel-heading">
+		<p class="panel-title"> Employees Lists</p>
+		<div class="panel-body">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Departament</th>
+						<th>Location</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="employees in employees">
+						<td>{{ employees.name }}</td>
+						<td>{{ employees.dept }}</td>
+						<td>{{ employees.area }}</td>
+						<td>
+							<a href="#/employees/{{ employees._id }}/show" class="btn btn-info"> Show </a>
+							<a href="#" class="btn btn-success"> Edit </a>
+							<a click="" class="btn btn-danger"> Delete</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+</div>
