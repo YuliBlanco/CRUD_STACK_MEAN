@@ -2,70 +2,69 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/employees');
-var Employee = mongoose.model('Employee', mongoose.Schema({
+mongoose.connect('mongodb://localhost/contactos');
+var Contactos = mongoose.model('contactos', mongoose.Schema({
 	name:String,
-	dept:String,
-	area:String,
-	status:String,
-	contact:String,
-	salary:String	
+	lastname:String,
+	email:String,
+	phone:String,
+	phonee:String,
+	interes:String	
 }));
+
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/client'));
 
-app.get('/api/employees', function(req, res){
-	Employee.find(function(err, employees){
+app.get('/api/contactos', function(req, res){
+	Contactos.find(function(err, contactos){
 		if(err)
 			res.send(err);
-		res.json(employees);
+		res.json(contactos);
 	});
 });
 
-app.get('/api/employees/:id', function(req, res){
+app.get('/api/contactos/:id', function(req, res){
 	
-	Employee.findOne({_id:req.params.id}, function(err, employee){
+	Contactos.findOne({_id:req.params.id}, function(err, contactos){
 		if(err)
 			res.send(err);
-		res.json(employee);
+		res.json(contactos);
 	});
 });
 
-app.post('/api/employees', function(req, res){
-	Employee.create( req.body, function(err, employees){
+app.post('/api/contactos', function(req, res){
+		Contactos.create( req.body, function(err, contactos){
 		if(err)
 			res.send(err);
-		res.json(employees);
+		res.json(contactos);
 	});
 });
 
-app.delete('/api/employees/:id', function(req, res){
+app.delete('/api/contactos/:id', function(req, res){
 	
-	Employee.findOneAndRemove({_id:req.params.id}, function(err, employee){
+		Contactos.findOneAndRemove({_id:req.params.id}, function(err, contactos){
 		if(err)
 			res.send(err);
-		res.json(employee);
+		res.json(contactos);
 	});
 });
 
-
-app.put('/api/employees/:id', function(req, res){
+app.put('/api/contactos/:id', function(req, res){
 	var query = {
 		name:req.body.name,
-		dept:req.body.dept,
-		area:req.body.area,
-		status:req.body.status,
-		contact:req.body.contact,
-		salary:req.body.salary
+		dept:req.body.lastname,
+		area:req.body.email,
+		status:req.body.phone,
+		contact:req.body.phonee,
+		salary:req.body.interes
 	};
-	Employee.findOneAndUpdate({_id:req.params.id}, query,  function(err, employee){
+	Contactos.findOneAndUpdate({_id:req.params.id}, query,  function(err, contactos){
 		if(err)
 			res.send(err);
-		res.json(employee);
+		res.json(contactos);
 	});
 });
-
 app.listen(3000, function(){
 	console.log('server is running on port 3000');
 });

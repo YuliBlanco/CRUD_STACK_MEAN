@@ -3,25 +3,25 @@ myApp.config(function($routeProvider){
 	$routeProvider
 		.when('/', {
 			templateUrl:'templates/list.html',
-			controller:'empController'
+			controller:'conController'
 		})
 
-		.when('/employees', {
+		.when('/contactos', {
 			templateUrl:'templates/list.html',
-			controller:'empController'
+			controller:'conController'
 		})
 
-		.when('/employees/create', {
+		.when('/contactos/create', {
 			templateUrl:'templates/add.html',
-			controller:'empController'
+			controller:'conController'
 		})
-		.when('/employees/:id/edit', {
+		.when('/contactos/:id/edit', {
 			templateUrl:'templates/edit.html',
-			controller:'empController'
+			controller:'conController'
 		})
-		.when('/employees/:id/show', {
+		.when('/contactos/:id/show', {
 			templateUrl:'templates/show.html',
-			controller:'empController'
+			controller:'conController'
 		});
 
 });

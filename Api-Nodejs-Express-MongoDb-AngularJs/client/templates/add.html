@@ -1,0 +1,35 @@
+<div clas="panel panel-default">
+	<div class="panel-heading">
+		<p class="panel-title"> <span style="color:#5bc0de;" class="glyphicon glyphicon-plus"></span> Agregar Nuevo Contacto</p>
+	</div>
+	<div class="panel-body">
+		<form ng-submit="addContactos()">
+			<div class="form-group">
+				<label for="name"> Nombre:</label>
+				<input type="text" class="form-control" id="name" ng-model="contactos.name">
+			</div>
+			<div class="form-group">
+				<label for="lastname"> Apellido:</label>
+				<input type="text" class="form-control" id="lastname" ng-model="contactos.lastname">
+			</div>
+			<div class="form-group">
+				<label for="email"> Email:</label>
+				<input type="text" class="form-control" id="email" ng-model="contactos.email">
+			</div>
+			<div class="form-group">
+				<label for="phone"> Teléfono Celular:</label>
+				<input type="text" class="form-control" id="phone" ng-model="contactos.phone">
+			</div>
+			<div class="form-group">
+				<label for="phonee"> Teléfono Hogar:</label>
+				<input type="text" class="form-control" id="phonee" ng-model="contactos.phonee">
+			</div>
+			<div class="form-group">
+				<label for="interes"> Intereses:</label>
+				<input type="text" class="form-control" id="interes" ng-model="contactos.interes">
+			</div>
+			<button type="submit" style="color:#5bc0de;" class="btn btn-default"> Save</button>
+			<a href="#/contactos" class="btn btn-default"> Cancel </a>
+		</form>
+	</div>
+</div>

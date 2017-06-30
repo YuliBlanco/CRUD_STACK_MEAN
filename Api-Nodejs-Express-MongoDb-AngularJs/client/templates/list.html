@@ -1,26 +1,31 @@
-<div class="panel panel-default" ng-init="getEmployees()">
+<div class="panel panel-default" ng-init="getContactos()">
 	<div class="panel-heading">
-		<p class="panel-title"> Employees Lists</p>
+		<p class="panel-title"><span styles="color:#5bc0de;" class="glyphicon glyphicon-plus"></span> Lista de Contactos </p>
 		<div class="panel-body">
 			<table class="table table-striped">
 				<thead>
 					<tr>
-						<th>Name</th>
-						<th>Departament</th>
-						<th>Location</th>
-						<th>Actions</th>
+						<th>Nombre</th>
+						<th>Apellido</th>
+						<th>Email</th>
+						<th>Teléfono Celular</th>
+						<th>Telefono Hogar</th>
+						<th>Intereses</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="employees in employees">
-						<td>{{ employees.name }}</td>
-						<td>{{ employees.dept }}</td>
-						<td>{{ employees.area }}</td>
-						<td>
-							<a href="#/employees/{{ employees._id }}/show" class="btn btn-info"> Show </a>
-							<a href="#" class="btn btn-success"> Edit </a>
-							<a click="" class="btn btn-danger"> Delete</a>
-						</td>
+					<tr ng-repeat="contactos in contactos">
+					   <td>{{ contactos.name }}</td>
+					   <td>{{ contactos.lastname }}</td>  
+					   <td>{{ contactos.email }}</td>
+					   <td>{{ contactos.phone }}</td> 
+					   <td>{{ contactos.phonee }}</td> 
+					   <td>{{ contactos.interes }}</td>  
+					<td>
+						<a href="#/contactos/{{ contactos._id }}/show" class="btn btn-info"> Show </a>
+						<a href="#/contactos/{{ contactos._id }}/edit" class="btn btn-success"> <span class="glyphicon glyphicon-edit"></span> Edit </a>
+						<a ng-click="deleteContactos(contactos._id)" class="btn btn-danger"> <span class="glyphicon glyphicon-trash"></span> Delete</a>
+					</td>
 					</tr>
 				</tbody>
 			</table>

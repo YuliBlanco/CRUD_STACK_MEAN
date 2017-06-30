@@ -1,18 +1,17 @@
-<div class="panel panel-default" ng-init="showEmployees()">
+<div class="panel panel-default" ng-init="showContactos()">
 	<div class="panel-heading">
-	  <p class="panel-title"> Employee Detail Information</p>
+	  <p class="panel-title"> Contactos Información Detallada</p>
 	</div>
 	<div class="panel-body">
 		<form>
 		<div class="form-group">
-		 <label class="form-control">Name: {{ employees.name }}</label>
-		 <label class="form-control">Department: {{ employees.dept }}</label>
-		 <label class="form-control">Location: {{ employees.area }}</label>
-		 <label class="form-control">Job Status: {{ employees.status }}</label>
-		 <label class="form-control">Contact: {{ employees.contact }}</label>
-		 <label class="form-control">Salary: {{ employees.salary }}</label>
-		 <label class="form-control">ID: {{ employees._id }}</label>
-		<a href="#/employees" class="btn btn-default"> Cancel</a>
+		 <label class="form-control">Nombre: {{ contactos.name }}</label>
+		 <label class="form-control">Apellido: {{ contactos.lastname }}</label>
+		 <label class="form-control">Email: {{ contactos.email }}</label>
+		 <label class="form-control">Teléfono Celular: {{ contactos.phone }}</label>
+		 <label class="form-control">Teléfono Hogar: {{ contactos.phonee }}</label>
+		 <label class="form-control">Interes: {{ contactos.interes }}</label>
+		<a href="#/contactos" class="btn btn-default"> Cancel</a>
 		</div>
 	</form>		
     <div>
