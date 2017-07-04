@@ -1,9 +1,23 @@
-import React from 'react';
-import { render } from 'react-dom';
+import React from "react";
+import { render } from "react-dom";
+import { BrowserRouter, Match, Route } from 'react-router-dom';
+
+import App from "./components/App";
+
 import './css/style.css';
-import App from './components/App';
-import StorePicker from './components/StorePicker';
 
+import StorePicker from "./components/StorePicker";
+import NotFound from './components/NotFound';
 
+const Root = () => {
+	return (
+		<BrowserRouter>
+		<div>
+		<Route path="/" component={StorePicker} />
+		<Route path="/store/:storeId" component={App} />
+		</div>
+		</BrowserRouter>
+		)
+}
 
-render(<App/>, document.querySelector('#main'));
+render(<Root/>, document.querySelector('#main'));
